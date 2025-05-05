@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4 - Adivinanza de Números</title>
+</head>
+<body>
+    <h1>Juego de Adivinanza de Números</h1>
+    <label for="adivinanza">Adivina el número entre 1 y 10:</label>
+    <input type="number" id="adivinanza">
+    <button onclick="adivinarNumero()">Adivinar</button>
+    <p id="resultado"></p>
+
+    <script>
+        function adivinarNumero() {
+            let numeroAleatorio = Math.floor(Math.random() * 10) + 1;
+            let adivinanza = parseInt(document.getElementById("adivinanza").value);
+            let mensaje = adivinanza === numeroAleatorio ? "¡Felicidades, adivinaste el número!" : `Lo siento, el número era ${numeroAleatorio}`;
+            document.getElementById("resultado").innerText = mensaje;
+        }
+    </script>
+</body>
+</html>
